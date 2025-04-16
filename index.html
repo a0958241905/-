@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>神秘驚喜</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #111;
+      color: white;
+      padding-top: 100px;
+    }
+    #countdown {
+      font-size: 48px;
+    }
+    #surprise {
+      display: none;
+      font-size: 60px;
+      color: red;
+    }
+    img {
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>神秘驚喜即將揭曉...</h1>
+  <div id="countdown">5</div>
+  <div id="surprise">
+    <p>你上當了！</p>
+    <img src="https://i.imgur.com/4L7cKQp.png" alt="中指圖">
+  </div>
+
+  <script>
+    let count = 5;
+    const countdown = document.getElementById("countdown");
+    const surprise = document.getElementById("surprise");
+
+    const interval = setInterval(() => {
+      count--;
+      countdown.textContent = count;
+      if (count === 0) {
+        clearInterval(interval);
+        countdown.style.display = "none";
+        surprise.style.display = "block";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
